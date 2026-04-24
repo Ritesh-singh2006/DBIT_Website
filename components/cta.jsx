@@ -1,7 +1,12 @@
+"use client"
+
+import React, { useState } from "react"
 import { Button } from "@/components/ui/button"
-import { ArrowRight } from "lucide-react"
+import { ArrowRight, X } from "lucide-react"
 
 export function CTA() {
+  const [showVideo, setShowVideo] = useState(false)
+
   return (
     <section className="relative py-24 overflow-hidden">
       {/* Background */}
@@ -71,6 +76,11 @@ export function CTA() {
             ].map((item) => (
               <div
                 key={item.title}
+                onClick={() => {
+                  if (item.title === "Campus Tour") {
+                    setShowVideo(true)
+                  }
+                }}
                 className="group p-6 rounded-xl bg-white/10 backdrop-blur-sm hover:bg-white/20 transition-colors cursor-pointer"
               >
                 <h3 className="font-sans text-lg font-bold text-white mb-2 group-hover:text-secondary transition-colors">
@@ -82,6 +92,27 @@ export function CTA() {
           </div>
         </div>
       </div>
+
+      {/* Video Modal */}
+      {showVideo && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4">
+          <div className="relative w-full max-w-4xl aspect-video bg-black rounded-lg overflow-hidden">
+            <button
+              onClick={() => setShowVideo(false)}
+              className="absolute top-4 right-4 z-10 p-2 bg-black/50 hover:bg-white hover:text-black text-white rounded-full transition-colors"
+            >
+              <X className="h-6 w-6" />
+            </button>
+            <iframe
+              className="w-full h-full"
+              src="https://www.youtube.com/embed/IKanfcOW7qg?start=1&autoplay=1"
+              title="DBIT Campus Tour"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </div>
+        </div>
+      )}
     </section>
   )
 }

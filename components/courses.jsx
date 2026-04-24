@@ -470,21 +470,25 @@ const courses = [
     title: "Computer Engineering",
     description: "Equipped with state-of-the-art software and highly qualified faculty members, our Computer Engineering department is one of the best in the city.",
     image: "/COMPSdept.png", 
+    href: "https://comps.dbit.in/"
   },
   {
     title: "Information Technology",
     description: "Our IT department houses faculty members who are experts in fields like Blockchain, deep learning, AI and cryptography.",
     image: "/ITdepartment.png",
+    href: "https://it.dbit.in/"
   },
   {
     title: "Electronics & Telecommunication",
     description: "Our EXTC department houses fully-functional electronics labs with the latest equipment. Experience hands-on learning.",
     image: "/EXTCdept.png",
+    href: "https://extc.dbit.in/"
   },
   {
     title: "Mechanical Engineering",
     description: "The department marries technical prowess to state-of-the-art laboratories. Gain hands-on experience in physical engineering.",
     image: "/MECHdept.png",
+    href: "https://mech.dbit.in/"
   },
 ]
 
@@ -559,9 +563,11 @@ export function Courses() {
                       <h3 className="text-white text-lg font-bold mb-2">{course.title}</h3>
                       <div className="w-12 h-1 bg-[#3B82F6] mb-4" />
                       <p className="text-slate-300 text-sm leading-relaxed mb-6">{course.description}</p>
-                      <Button className="bg-[#3B82F6] hover:bg-[#2563EB] text-white w-fit font-bold px-8 py-4 rounded-xl tracking-widest text-[10px]">
-                        KNOW MORE
-                      </Button>
+                      <a href={course.href} target="_blank" rel="noopener noreferrer">
+                        <Button className="bg-[#3B82F6] hover:bg-[#2563EB] text-white w-fit font-bold px-8 py-4 rounded-xl tracking-widest text-[10px]">
+                          KNOW MORE
+                        </Button>
+                      </a>
                     </div>
                   </div>
                 </div>

@@ -19,12 +19,12 @@ const aboutUsMenu = [
   {
     title: "College Links",
     links: [
-      { name: "The Salesian of Don Bosco", href: "#" },
-      { name: "Management", href: "#" },
-      { name: "The Institute", href: "#" },
-      { name: "Vision & Mission", href: "#" },
+      { name: "The Salesian of Don Bosco", href: "/salesian-of-don-bosco" },
+      { name: "Management", href: "/management" },
+      { name: "The Institute", href: "/institute" },
+      { name: "Vision & Mission", href: "/vision-mission" },
       { name: "Mandatory Disclosure", href: "#" },
-      { name: "Infrastructure", href: "#" },
+      { name: "Infrastructure", href: "/infrastructure" },
     ],
   },
   {
@@ -83,11 +83,11 @@ const academicsMenu = [
   {
     title: "Departments",
     links: [
-      { name: "Computer Engineering", href: "#" },
-      { name: "Information Technology", href: "#" },
-      { name: "EXTC Engineering", href: "#" },
-      { name: "Mechanical Engineering", href: "#" },
-      { name: "Basic Science & Humanities", href: "#" },
+      { name: "Computer Engineering", href: "https://comps.dbit.in/" },
+      { name: "Information Technology", href: "https://it.dbit.in/" },
+      { name: "EXTC Engineering", href: "https://extc.dbit.in/" },
+      { name: "Mechanical Engineering", href: "https://mech.dbit.in/" },
+      { name: "Basic Science & Humanities", href: "https://fe.dbit.in/" },
     ],
   },
   {

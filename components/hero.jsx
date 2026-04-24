@@ -99,10 +99,12 @@
 
 "use client"
 
-import { Play } from "lucide-react"
+import React, { useState } from "react"
+import { Play, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 export function Hero() {
+  const [showVideo, setShowVideo] = useState(false)
   return (
     <section className="relative h-[85vh] flex items-center overflow-hidden bg-gray-900">
       {/* Background Image with optimized dark overlay */}
@@ -138,6 +140,7 @@ export function Hero() {
               size="lg"
               variant="outline"
               className="border-white/30 text-white hover:bg-white hover:text-black font-bold text-lg px-10 h-16 bg-white/10 backdrop-blur-md"
+              onClick={() => setShowVideo(true)}
             >
               <Play className="mr-2 h-5 w-5 fill-current" />
               Take a Virtual Tour
@@ -145,6 +148,27 @@ export function Hero() {
           </div>
         </div>
       </div>
+
+      {/* Video Modal */}
+      {showVideo && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4">
+          <div className="relative w-full max-w-4xl aspect-video bg-black rounded-lg overflow-hidden">
+            <button
+              onClick={() => setShowVideo(false)}
+              className="absolute top-4 right-4 z-10 p-2 bg-black/50 hover:bg-white hover:text-black text-white rounded-full transition-colors"
+            >
+              <X className="h-6 w-6" />
+            </button>
+            <iframe
+              className="w-full h-full"
+              src="https://www.youtube.com/embed/IKanfcOW7qg?start=1&autoplay=1"
+              title="DBIT Campus Tour"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </div>
+        </div>
+      )}
     </section>
   )
 }
